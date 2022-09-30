@@ -1,0 +1,16 @@
+nav {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    margin: 20px;
+    padding: 10px;
+    background-color: #EEE3CB;
+}
+
+button {
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 0px 10px;
+}
