@@ -9,6 +9,7 @@ const Navbar = () => {
                 <button>All</button>
                 <button>Jazz</button>
                 <button>Rock</button>
+                <button>Pop</button>
             </div>
             <CartWidget />
         </nav>
