@@ -1,4 +1,6 @@
-const Item = ({image, album ,name, genre, price}) => {
+import {Link} from 'react-router-dom'
+
+const Item = ({id, image, album ,name, genre, price}) => {
     return (
         <div>
             <img src={image} alt={name} style={{height: 300}}/>
@@ -7,7 +9,9 @@ const Item = ({image, album ,name, genre, price}) => {
                 <h5>{name}</h5>
                 <h5>{genre}</h5>
                 <p>U$S {price}</p>
-                <button>Details</button>
+                <div>
+                    <Link to={`/detail/${id}`}>More details</Link>
+                </div>
             </section>
             
         </div>

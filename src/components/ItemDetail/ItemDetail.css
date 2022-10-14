@@ -1,0 +1,9 @@
+.CardItem {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+
+.DetailImg {
+    height: 200px;
+}
