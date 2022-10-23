@@ -1,0 +1,12 @@
+h2 {
+    font-family: 'Righteous', cursive;
+    font-size: 40px;
+    font-weight: 300;
+    color: #3D3C3A;
+    text-align: center;
+    margin-top: 60px;
+}
+
+.products-container {
+    padding: 0px 60px;
+}

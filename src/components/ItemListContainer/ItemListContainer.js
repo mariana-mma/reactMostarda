@@ -2,6 +2,7 @@ import {useState, useEffect} from 'react'
 import {getProducts, getProductsByGenre} from '../asyncMock'
 import ItemList from '../ItemList/ItemList'
 import {useParams} from 'react-router-dom'
+import './ItemListContainer.css'
 
 
 const ItemListContainer = () => {
@@ -30,8 +31,8 @@ const ItemListContainer = () => {
     }
 
     return (
-        <div>
-            <h1>DISCOVER MUSIC</h1>
+        <div className='products-container'>
+            <h2>DISCOVER MUSIC</h2>
             <ItemList products={products}/>
         </div>
     )

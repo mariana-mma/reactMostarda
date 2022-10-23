@@ -3,9 +3,9 @@ import './CartWidget.css';
 
 const CartWidget = () => {
     return (
-        <div>
-            <img src='/images/cart.png' alt='shopping cart'/>
-            0
+        <div className='cart-widget'>
+            <img src='/images/cart-white.png' alt='shopping cart'/>
+            <p>0</p>
         </div>
     )
 }

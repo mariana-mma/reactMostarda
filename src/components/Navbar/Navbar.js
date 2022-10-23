@@ -7,10 +7,10 @@ const Navbar = () => {
         <nav>
             <h1>Groove Store</h1>
             <div>
-                <Link to={'/'} >Home</Link>
-                <Link to={'/genre/jazz'}>Jazz</Link>
-                <Link to={'/genre/rock'}>Rock</Link>
-                <Link to={'/genre/pop'}>Pop</Link>
+                <Link to={'/'} className='nav-text'>HOME</Link>
+                <Link to={'/genre/jazz'} className='nav-text'>JAZZ</Link>
+                <Link to={'/genre/rock'} className='nav-text'>ROCK</Link>
+                <Link to={'/genre/pop'} className='nav-text'>POP</Link>
             </div>
             <CartWidget />
         </nav>

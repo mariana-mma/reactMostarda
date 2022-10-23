@@ -3,9 +3,16 @@ nav {
     flex-direction: row;
     justify-content: space-between;
     align-items: center;
-    margin: 20px;
-    padding: 10px;
+    padding: 10px 60px;
     background-color: #EEE3CB;
+    border-radius: 0px 0px 30px 30px;
+}
+
+h1 {
+    font-family: 'Righteous', cursive;
+    font-size: 45px;
+    font-weight: 300;
+    color: #3D3C3A;
 }
 
 button {
@@ -13,4 +20,13 @@ button {
     border: none;
     cursor: pointer;
     padding: 0px 10px;
+}
+
+.nav-text {
+    font-family: 'Inter', sans-serif;
+    font-size: 23px;
+    font-weight: 700;
+    text-decoration: none;
+    padding: 0px 10px;
+    color: #3D3C3A;
 }

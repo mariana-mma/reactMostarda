@@ -1,26 +1,18 @@
-/*Font Size*/
-
-h1 {
-    font-size: 25px;
+.card-container {
+    justify-self: center;
+    margin-top: 40px;
 }
 
-h2 {
-    font-size: 23px;
+.card-item h5 {
+    margin: 15px 0px;
 }
 
-h3 {
-    font-size: 20px;
+.card-item p {
+    margin: 10px 0px;
 }
 
-h4 {
-    font-size: 17px;
+.card-item-detail {
+    font-family: 'Inter', sans-serif;
+    text-decoration: none;
+    color: #3D3C3A;
 }
-
-h5 {
-    font-size: 15px;
-}
-
-p {
-    font-size: 12px;
-}
-
