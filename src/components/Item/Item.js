@@ -1,7 +1,7 @@
 import {Link} from 'react-router-dom'
 import './Item.css'
 
-const Item = ({id, image, album ,name, genre, price}) => {
+const Item = ({id, image, album , name, genre, price}) => {
     return (
         <div className='card-container'>
             <img src={image} alt={name} style={{height: 350}}/>

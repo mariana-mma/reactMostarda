@@ -8,6 +8,7 @@
     background-color: #7EAE97 ;
     border-radius: 10px;
     cursor: pointer;
+    text-decoration: none;
 }
 
 .cart-widget img {

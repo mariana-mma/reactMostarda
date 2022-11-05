@@ -1,13 +1,18 @@
 import './ItemDetail.css'
 import ItemCount from '../ItemCount/ItemCount'
+import { CartContext } from '../../context/CartContext'
+import { useContext } from 'react'
 
 const ItemDetail = ({ id, image, album , name, genre, stock, price, description}) => {
+    const { addToCart } = useContext(CartContext)
+    
     const handleOnAdd = (count) => {
-        const productToAdd = {
-            id, album, name, price, count
+        const item = {
+            id, album, name, price, count, image
         }
-        console.log(productToAdd)
-    }
+        addToCart(item)
+        console.log(item)
+    }// change name of function
     
     return (
         <div className="CardItem">
