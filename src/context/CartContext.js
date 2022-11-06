@@ -40,7 +40,6 @@ export const CartProvider = ({children}) =>{
         cart.forEach((item) => {
             amount += item.count * item.price
         })
-        console.log(amount)
         return amount
     }
 

@@ -4,7 +4,7 @@ import './Item.css'
 const Item = ({id, image, album , name, genre, price}) => {
     return (
         <div className='card-container'>
-            <img src={image} alt={name} style={{height: 350}}/>
+            <img src={image} alt={name} style={{height: 250}}/>
             <section className='card-item'>
                 <h5>{album}</h5>
                 <div>

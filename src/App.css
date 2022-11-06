@@ -20,25 +20,25 @@ body {
 /*Font Size*/
 
 h1 {
-  font-size: 45px;
+  font-size: 25px;
 }
 
 h2 {
-  font-size: 40px;
+  font-size: 23px;
 }
 
 h3 {
-  font-size: 35px;
-}
-
-h4 {
-  font-size: 30px;
-}
-
-h5 {
   font-size: 20px;
 }
 
-p {
+h4 {
   font-size: 18px;
+}
+
+h5 {
+  font-size: 15px;
+}
+
+p {
+  font-size: 11px;
 }

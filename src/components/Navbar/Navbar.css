@@ -10,7 +10,6 @@ nav {
 
 h1 {
     font-family: 'Righteous', cursive;
-    font-size: 45px;
     font-weight: 300;
     color: #3D3C3A;
 }
@@ -24,7 +23,7 @@ button {
 
 .nav-text {
     font-family: 'Inter', sans-serif;
-    font-size: 23px;
+    font-size: 15px;
     font-weight: 700;
     text-decoration: none;
     padding: 0px 10px;
