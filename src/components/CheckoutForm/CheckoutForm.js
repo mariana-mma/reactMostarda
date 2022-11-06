@@ -3,21 +3,27 @@ import { useContext, useState } from 'react'
 import { CartContext } from '../../context/CartContext'
 import { addDoc, collection, getDocs, query, where, documentId, writeBatch } from 'firebase/firestore'
 import { db } from '../../services/firebase/index'
+import { useNavigate } from 'react-router-dom'
+import Form from '../Form/Form'
+import Swal from 'sweetalert2'
+import withReactContent from 'sweetalert2-react-content'
 
 const CheckoutForm = () => {
     const [loading, setLoading] = useState(false)
-    const { cart, getTotal } = useContext(CartContext)
+    const { cart, getTotal, clearCart } = useContext(CartContext)
     const totalPrice = getTotal()
+    const navigate = useNavigate()
+    const MySwal = withReactContent(Swal)
 
-    const createOrder = async () => {
+    const createOrder = async (user) => {
         setLoading(true)
 
         try {
             const objOrder = {
                 buyer: {
-                    name: 'Mariana',
-                    phone: '097862250',
-                    mail: 'mmabal@mail.com'
+                    email: user.email,
+                    name: user.name,
+                    phone: user.phone
                 },
                 items: cart,
                 total: totalPrice
@@ -50,26 +56,36 @@ const CheckoutForm = () => {
 
                 const orderRef = collection(db, 'orders')
                 const orderAdded = await addDoc(orderRef, objOrder)
+                
+                clearCart()
 
-                console.log('success msg');
+                MySwal.fire({
+                    icon: 'success',
+                    title: 'Order completed!',
+                    text: `Your order id is: ${orderAdded.id}`
+                })
+
+                setTimeout(() => {
+                    navigate('/')
+                }, 3000)
             }else{
-                console.log('error msg')
+                MySwal.fire({
+                    icon: 'info',
+                    title: 'Out of stock',
+                    text: 'This item is now out of stock'
+                })
             }
 
         }catch(err){
-            console.log(err)
+            MySwal.fire({
+                icon: 'error',
+                title: 'Error',
+                text: err
+            })
         }finally{
             setLoading(false)
         }
         
-
-        // const collectionRef = collection(db, 'orders')
-
-        // addDoc(collectionRef, objOrder).then(res => {
-        //     console.log(res.id)
-        // }).catch(err => {
-        //     console.log(err)
-        // })
     }
 
     if(loading){
@@ -81,10 +97,21 @@ const CheckoutForm = () => {
             <h1>Checkout</h1>
             <div>
                 <h4>Items</h4>
+                <div>
+                    {cart.map((prod) => (
+                        <div className='itemsDisplay' key={prod.id}>
+                            <p>Album:{prod.album}</p>
+                            <p>Artist: {prod.name}</p>
+                            <p>Price: U$S {prod.price}</p>
+                            <p>Quantity: {prod.count}</p>
+                        </div>
+                        ))
+                    }
+                </div>
                 <p>Total: U$S {totalPrice}</p>
             </div>
-            <h2>Form</h2>
-            <button onClick={createOrder}>Finish purchase</button>
+            <h5>Complete the form below:</h5>
+            <Form createOrder={createOrder}/>
         </div>
     )
 }

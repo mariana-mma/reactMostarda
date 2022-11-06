@@ -11,8 +11,7 @@ const ItemDetail = ({ id, image, album , name, genre, stock, price, description}
             id, album, name, price, count, image
         }
         addToCart(item)
-        console.log(item)
-    }// change name of function
+    }
     
     return (
         <div className="CardItem">
@@ -29,7 +28,7 @@ const ItemDetail = ({ id, image, album , name, genre, stock, price, description}
                 <p>Description: {description}</p>
             </div>
             <div>
-                <ItemCount onAdd={handleOnAdd} stock={stock}/>
+                { stock !== 0 ? <ItemCount onAdd={handleOnAdd} stock={stock}/> : <p>Currently out of stock</p>}
             </div>
         </div>
     )

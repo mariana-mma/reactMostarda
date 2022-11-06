@@ -1,4 +1,6 @@
 import { useState, createContext } from "react"
+import Swal from 'sweetalert2'
+import withReactContent from 'sweetalert2-react-content'
 
 export const CartContext = createContext({
     cart: [],
@@ -6,14 +8,28 @@ export const CartContext = createContext({
 
 export const CartProvider = ({children}) =>{
     const [cart, setCart] = useState([]);
-    // const [total, setTotal] = useState(0);
+    const MySwal = withReactContent(Swal)
 
     const addToCart = (item) => {
-        console.log('addToCart')
         if(isAlreadyAdded(item.id)) {
-            console.log('Is already in cart')
+            MySwal.fire({
+                title: 'The item is already in cart',
+                icon: 'info',
+                position: 'bottom-right',
+                timer: 2000,
+                showConfirmButton: false,
+                toast: true
+            });
         } else {
             setCart([...cart, item])
+            MySwal.fire({
+                title: 'The item is now in the cart!',
+                icon: 'success',
+                position: 'bottom-right',
+                timer: 2000,
+                showConfirmButton: false,
+                toast: true
+            });
         }
     };
 
@@ -24,6 +40,14 @@ export const CartProvider = ({children}) =>{
     const removeItem = (id) =>{
         const updatedCart = cart.filter((item) => item.id !== id)
         setCart(updatedCart)
+        MySwal.fire({
+            title: 'The item was removed from cart',
+            icon: 'info',
+            position: 'bottom-right',
+            timer: 2000,
+            showConfirmButton: false,
+            toast: true
+        });
     };
 
     const getAmount = () => {
@@ -43,13 +67,12 @@ export const CartProvider = ({children}) =>{
         return amount
     }
 
-    // useEffect(() => { 
-    //     const total = getTotal()
-    //     setTotal(total)
-    // },[cart])  //eslint-disable-line
+    const clearCart = () => {
+        setCart([])
+    }
 
     return ( 
-        <CartContext.Provider value={{ cart, addToCart, removeItem, getAmount, getTotal }} >
+        <CartContext.Provider value={{ cart, addToCart, removeItem, getAmount, getTotal, clearCart }} >
             { children }
         </CartContext.Provider>
     );

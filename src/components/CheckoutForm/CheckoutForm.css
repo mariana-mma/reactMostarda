@@ -1,0 +1,7 @@
+.itemsDisplay {
+    display: flex;
+    flex-direction: row;
+    width: 500px;
+    height: auto;
+    justify-content: space-between;
+}

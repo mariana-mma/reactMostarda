@@ -11,3 +11,18 @@
     color: white;
     font-size: 14px;
 }
+
+.buttonEmpty {
+    margin-top: 10px;
+    background: none;
+    border: none;
+    padding: 8px 10px;
+    height: 28px;
+    width: 80px;
+    background-color: #dd795f   ;
+    border-radius: 10px;
+    cursor: pointer;
+    text-decoration: none;
+    color: white;
+    font-size: 11px;
+}

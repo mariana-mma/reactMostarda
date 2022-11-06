@@ -4,6 +4,8 @@ import { useParams } from 'react-router-dom'
 import './ItemListContainer.css'
 import { getDocs, collection, query, where } from 'firebase/firestore'
 import { db } from '../../services/firebase/index'
+import Swal from 'sweetalert2'
+import withReactContent from 'sweetalert2-react-content'
 
 
 const ItemListContainer = () => {
@@ -15,13 +17,13 @@ const ItemListContainer = () => {
 
     useEffect(() => {
         setLoading(true)
+        const MySwal = withReactContent(Swal)
 
         const collectionRef = genreId 
         ? query(collection(db, 'products'), where('genre', '==', genreId)) 
         : collection(db, 'products')
 
         getDocs(collectionRef).then(res => {
-            console.log(res)
             const productsAdapted = res.docs.map(doc =>{
                 const data = doc.data()
 
@@ -30,7 +32,11 @@ const ItemListContainer = () => {
 
             setProducts(productsAdapted)
         }).catch(err => {
-            console.log(err)
+            MySwal.fire({
+                icon: 'error',
+                title: 'Error',
+                text: err
+            })
         }).finally(() => {
             setLoading(false)
         })

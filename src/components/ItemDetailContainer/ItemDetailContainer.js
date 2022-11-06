@@ -1,9 +1,10 @@
-import './ItemDetailContainer.css';
 import { useState, useEffect } from 'react';
 import ItemDetail from '../ItemDetail/ItemDetail';
 import { useParams } from 'react-router-dom';
 import { getDoc, doc } from 'firebase/firestore';
 import { db } from '../../services/firebase/index';
+import Swal from 'sweetalert2'
+import withReactContent from 'sweetalert2-react-content'
 
 const ItemDetailContainer = () => {
     const [product, setProduct] = useState()
@@ -13,6 +14,7 @@ const ItemDetailContainer = () => {
 
     useEffect(() => {
         const docRef = doc(db, 'products', productId)
+        const MySwal = withReactContent(Swal)
 
         getDoc(docRef).then(res => {
             const data = res.data()
@@ -20,7 +22,11 @@ const ItemDetailContainer = () => {
             
             setProduct(productAdapted)
         }).catch(err => {
-            console.log(err)
+            MySwal.fire({
+                icon: 'error',
+                title: 'Error',
+                text: err
+            })
         }).finally(() => {
             setLoading(false)
         })
