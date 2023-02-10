@@ -43,7 +43,7 @@ const ItemListContainer = () => {
     }, [genreId])
 
     if(loading) {
-        return <h1>Loading...</h1>
+        return <h1 style={{textAlign: 'center'}}>Loading...</h1>
     }
 
     return (

@@ -89,29 +89,52 @@ const CheckoutForm = () => {
     }
 
     if(loading){
-        return <h2>Your order is being generated..</h2>
+        return <h2 style={{textAlign: 'center'}}>Your order is being generated..</h2>
     }
 
     return (
         <div>
-            <h1>Checkout</h1>
-            <div>
-                <h4>Items</h4>
+            <h1 style={{textAlign: 'center'}}>Checkout</h1>
+            <div className='checkoutItems'>
+                <h5>Items</h5>
                 <div>
-                    {cart.map((prod) => (
+                    <table className='checkoutTable'>
+                        <thead>
+                        <tr>
+                            <th className='tableTitle'><strong>Album</strong></th>
+                            <th className='tableTitle'><strong>Artist</strong></th>
+                            <th className='tableTitle'><strong>Price</strong></th>
+                            <th className='tableTitle'><strong>Quantity</strong></th>
+                        </tr>
+                        </thead>
+                        <tbody>
+                            {cart.map((prod) => (
+                                <tr key={prod.id}>
+                                    <td className='tableTexts'>{prod.album}</td>
+                                    <td className='tableTexts'>{prod.name}</td>
+                                    <td className='tableNumbers'>U$S {prod.price}</td>
+                                    <td className='tableNumbers'>{prod.count}</td>
+                                </tr>
+                                ))
+                            }
+                        </tbody>
+                    </table>
+                    {/* {cart.map((prod) => (
                         <div className='itemsDisplay' key={prod.id}>
-                            <p>Album:{prod.album}</p>
-                            <p>Artist: {prod.name}</p>
-                            <p>Price: U$S {prod.price}</p>
-                            <p>Quantity: {prod.count}</p>
+                            <p><strong>Album:</strong> {prod.album}</p>
+                            <p><strong>Artist:</strong> {prod.name}</p>
+                            <p><strong>Price:</strong> U$S {prod.price}</p>
+                            <p><strong>Quantity:</strong> {prod.count}</p>
                         </div>
                         ))
-                    }
+                    } */}
                 </div>
-                <p>Total: U$S {totalPrice}</p>
+                <p><strong>Total: U$S {totalPrice}</strong></p>
             </div>
-            <h5>Complete the form below:</h5>
-            <Form createOrder={createOrder}/>
+            <div className='checkoutForm'>
+                <h5>Complete the form below:</h5>
+                <Form createOrder={createOrder}/>
+            </div>
         </div>
     )
 }

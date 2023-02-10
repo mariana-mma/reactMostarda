@@ -16,3 +16,8 @@
     text-decoration: none;
     color: #3D3C3A;
 }
+
+.card-item-detail:hover {
+    text-decoration: underline;
+    transition: 0.7s;
+}

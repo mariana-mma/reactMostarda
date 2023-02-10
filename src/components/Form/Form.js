@@ -18,7 +18,7 @@ const Form = ({createOrder}) => {
     return (
         <form className="form-container" onSubmit={handleSubmit}>
             <div>
-                <label>Email:
+                <label>Email: <br />
                     <input
                         className="form-input"
                         type="email"
@@ -31,7 +31,7 @@ const Form = ({createOrder}) => {
                 
             </div>
             <div>
-                <label>Complete name and surname: 
+                <label>Full name: <br />
                     <input
                         className="form-input"
                         type="text"
@@ -43,7 +43,7 @@ const Form = ({createOrder}) => {
                 </label>
             </div>
             <div>
-                <label>Phone number:
+                <label>Phone number: <br />
                     <input
                         className="form-input"
                         type="tel"

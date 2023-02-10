@@ -2,8 +2,26 @@
     display: flex;
     flex-direction: row;
     justify-content: center;
+    padding-top: 60px;
+    padding-left: 60px;
+    padding-right: 60px;
 }
 
 .DetailImg {
     height: 200px;
+    margin: 10px;
+}
+
+.DetailName {
+    padding: 0px 10px;
+    width: 250px;
+}
+
+.DetailName h4 {
+    margin: 20px 0px;
+}
+
+.DetailInfo {
+    padding: 0px 10px;
+    width: 300px;
 }

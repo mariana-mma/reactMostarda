@@ -36,9 +36,9 @@ const Cart = () => {
 
     if(cart.length === 0){
         return (
-            <div>
+            <div className='emptyCartContainer'>
                 <h1>Your Cart is empty</h1>
-                <div>
+                <div className='buttonGoBack'>
                     <Link to={`/`}>See cool vinyls</Link>
                 </div>
             </div>
@@ -48,25 +48,23 @@ const Cart = () => {
     return (
         <div>
             <h2>Your Cart</h2>
-            <div>
+            <div className='itemsContainer'>
                 {cart.map((prod) => (
-                    <div key={prod.id}>
-                        <img src={prod.image} alt={prod.name} style={{height: 120}}/>
-                        <h4>{prod.name}</h4>
-                        <p>{prod.album}</p>
-                        <p>Price: U$S {prod.price}</p>
-                        <p>Quantity: {prod.count}</p>
-                        <p>Subtotal: U$S {multiply(prod.price, prod.count)}</p>
-                        <button onClick={() => removeItem(prod.id)}>Remove</button>
+                    <div className='itemInfo' key={prod.id}>
+                        <img src={prod.image} alt={prod.name} style={{height: 180}}/>
+                        <p><strong>Artist:</strong> {prod.name}</p>
+                        <p><strong>Album:</strong> {prod.album}</p>
+                        <p><strong>Price:</strong> U$S {prod.price}</p>
+                        <p><strong>Quantity:</strong> {prod.count}</p>
+                        <p><strong>Subtotal:</strong> U$S {multiply(prod.price, prod.count)}</p>
+                        <button className='buttonRemove' onClick={() => removeItem(prod.id)}>Remove</button>
                     </div>
                     ))
                 }
             </div>
-            <div>
+            <div className='priceContainer'>
                 <h5>Total: U$S {totalPrice}</h5>
-            </div>
-            <Link to={`/checkout`} className='buttonCheckout'>Proceed to checkout</Link>
-            <div>
+                <Link to={`/checkout`} className='buttonCheckout'>Proceed to checkout</Link>
                 <button className="buttonEmpty" onClick={askEmptyCart}>Empty Cart</button>
             </div>
         </div>

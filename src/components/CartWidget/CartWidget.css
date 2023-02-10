@@ -11,6 +11,11 @@
     text-decoration: none;
 }
 
+.cart-widget:hover {
+    background-color:#8CC2A8;
+    transition: 0.7s;
+}
+
 .cart-widget img {
     height: 20px;
     width: auto;

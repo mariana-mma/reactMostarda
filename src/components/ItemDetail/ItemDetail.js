@@ -19,13 +19,15 @@ const ItemDetail = ({ id, image, album , name, genre, stock, price, description}
                 <img src={image} alt={album} className="DetailImg"/>
             </div>
             <div>
-                <h3>{album}</h3>
-                <h4>{name}</h4>
-            </div>
-            <div>
-                <p>Genre: {genre}</p>
-                <p>Price: {price}</p>
-                <p>Description: {description}</p>
+                <div className="DetailName">
+                    <h4>{album}</h4>
+                    <h5>{name}</h5>
+                </div>
+                <div className="DetailInfo">
+                    <p><strong>Genre: </strong>{genre}</p>
+                    <p><strong>Price: </strong>{price}</p>
+                    <p><strong>Description: </strong>{description}</p>
+                </div>
             </div>
             <div>
                 { stock !== 0 ? <ItemCount onAdd={handleOnAdd} stock={stock}/> : <p>Currently out of stock</p>}

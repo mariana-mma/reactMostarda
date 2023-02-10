@@ -1,6 +1,7 @@
 .buttonComplete {
     background: none;
     border: none;
+    margin-top: 8px;
     padding: 8px 10px;
     height: 35px;
     width: 140px;
@@ -11,20 +12,25 @@
     color: white;
     font-size: 14px;
 }
+.buttonComplete:hover {
+    text-decoration: none;
+    background-color:#8CC2A8;
+    transition: 0.7s;
+}
 
 .form-container {
-    margin: 40px 0px;
+    margin: 10px 0px;
     display: flex;
     flex-direction: column;
     justify-content: center;
 }
 
 .form-container p, label {
-    font-size: 15px;
+    font-size: 12px;
 }
 
 .form-input {
-    margin: 5px 0px;
+    margin: 9px 0px;
     padding: 5px;
     height: 30px;
     width: 300px;

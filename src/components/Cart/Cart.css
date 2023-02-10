@@ -1,15 +1,39 @@
+.itemsContainer {
+    padding: 15px 60px 0px 60px;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.itemInfo {
+    padding: 0px 17px;
+}
+
+.priceContainer {
+    display: flex;
+    flex-direction: column;
+    padding-right: 60px;
+    align-items: flex-end;
+}
+
 .buttonCheckout {
     background: none;
     border: none;
     padding: 8px 10px;
     height: 35px;
-    width: 180px;
+    width: 140px;
     background-color: #7EAE97 ;
     border-radius: 10px;
     cursor: pointer;
     text-decoration: none;
     color: white;
-    font-size: 14px;
+    font-size: 12px;
+}
+
+.buttonCheckout:hover {
+    background-color:#8CC2A8;
+    transition: 0.7s;
 }
 
 .buttonEmpty {
@@ -17,12 +41,59 @@
     background: none;
     border: none;
     padding: 8px 10px;
-    height: 28px;
-    width: 80px;
-    background-color: #dd795f   ;
+    height: 35px;
+    width: 85px;
+    background-color: #dd795f;
     border-radius: 10px;
     cursor: pointer;
     text-decoration: none;
     color: white;
+    font-size: 12px;
+}
+
+.buttonEmpty:hover {
+    background-color:#FF8B6E;
+    text-decoration: none;
+    transition: 0.7s;
+}
+
+.emptyCartContainer {
+    padding: 15px 60px 0px 60px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+
+.buttonGoBack {
+    margin-top: 10px;
+    padding: 7px 10px;
+    height: 35px;
+    width: 150px;
+    background-color: #7EAE97;
+    border-radius: 10px;
+    cursor: pointer;
+}
+
+.buttonGoBack:hover {
+    background-color:#8CC2A8;
+    transition: 0.7s;
+}
+
+.buttonGoBack a {
+    text-decoration: none;
+    color: white;
+    font-size: 15px;
+}
+
+.buttonRemove {
     font-size: 11px;
+    background: none;
+    border: none;
+    cursor: pointer;
+}
+
+button:hover {
+    text-decoration: underline;
+    transition: 0.7s;
 }

@@ -5,3 +5,29 @@
     height: auto;
     justify-content: space-between;
 }
+
+.checkoutItems {
+    padding-left: 60px;
+}
+
+.checkoutForm {
+    padding-left: 60px;
+}
+
+.checkoutTable {
+    font-size: 12px;
+    width: 564px;
+    height: 90px;
+}
+
+.tableTitle {
+    width: 141px;
+}
+
+.tableTexts {
+    padding-left: 10px;
+}
+
+.tableNumbers {
+    text-align: center;
+}
