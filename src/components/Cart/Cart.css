@@ -7,7 +7,7 @@
 }
 
 .itemInfo {
-    padding: 0px 17px;
+    padding: 10px 17px;
 }
 
 .priceContainer {
@@ -96,4 +96,18 @@
 button:hover {
     text-decoration: underline;
     transition: 0.7s;
+}
+
+
+@media only screen and (min-width: 762px) and (max-width: 911px){
+    .itemInfo {
+        padding: 10px 44px;
+    }
+}
+
+@media only screen and (min-width: 912px) and (max-width: 1191px){
+    .itemInfo {
+        padding: 10px 90px;
+        margin: 0px 5px;
+    }
 }

@@ -1,6 +1,7 @@
 .CardItem {
     display: flex;
     flex-direction: row;
+    flex-wrap: wrap;
     justify-content: center;
     padding-top: 60px;
     padding-left: 60px;
@@ -24,4 +25,8 @@
 .DetailInfo {
     padding: 0px 10px;
     width: 300px;
+}
+
+.detailContainer {
+    margin: 0px 15px;
 }

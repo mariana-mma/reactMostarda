@@ -18,7 +18,7 @@ const ItemDetail = ({ id, image, album , name, genre, stock, price, description}
             <div>
                 <img src={image} alt={album} className="DetailImg"/>
             </div>
-            <div>
+            <div className='detailContainer'>
                 <div className="DetailName">
                     <h4>{album}</h4>
                     <h5>{name}</h5>
